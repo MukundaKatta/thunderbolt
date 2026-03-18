@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --bg-card: #1a2035;
+  --bg-hover: #1e2a45;
+  --border-color: #2a3555;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --accent-blue: #4c6ef5;
+  --accent-green: #22c55e;
+  --accent-red: #ef4444;
+  --accent-yellow: #f59e0b;
+  --accent-purple: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-[#2a3555] bg-[#1a2035] p-6 shadow-lg;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-bolt-500/50 hover:shadow-bolt-500/10;
+  }
+
+  .btn-primary {
+    @apply rounded-lg bg-bolt-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-bolt-700 active:bg-bolt-800;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border border-[#2a3555] bg-[#1a2035] px-4 py-2 text-sm font-medium text-gray-300 transition-colors hover:bg-[#1e2a45] hover:text-white;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-[#2a3555] bg-[#111827] px-4 py-2.5 text-sm text-gray-200 placeholder-gray-500 outline-none transition-colors focus:border-bolt-500 focus:ring-1 focus:ring-bolt-500/50;
+  }
+
+  .select-field {
+    @apply input-field appearance-none cursor-pointer;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-medium text-green-400;
+  }
+
+  .badge-yellow {
+    @apply inline-flex items-center rounded-full bg-yellow-500/15 px-2.5 py-0.5 text-xs font-medium text-yellow-400;
+  }
+
+  .badge-red {
+    @apply inline-flex items-center rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-medium text-red-400;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-medium text-blue-400;
+  }
+
+  .table-header {
+    @apply cursor-pointer select-none border-b border-[#2a3555] bg-[#111827] px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-400 transition-colors hover:text-white;
+  }
+
+  .table-cell {
+    @apply border-b border-[#2a3555]/50 px-4 py-3 text-sm;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4565;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #2a3555;
+}
+
+.recharts-text {
+  fill: #9ca3af;
+  font-size: 12px;
+}
