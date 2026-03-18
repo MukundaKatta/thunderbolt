@@ -81,6 +81,3 @@ thunderbolt/
 └── package.json
 ```
 
-## License
-
-MIT
